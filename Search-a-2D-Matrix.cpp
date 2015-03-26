@@ -17,15 +17,18 @@
 
 class Solution {
 public:
-    int singleNumber(int A[], int n) {
-        int bitnum[32]={0};
-        int res=0;
-        for(int i=0; i<32; i++){
-            for(int j=0; j<n; j++){
-                bitnum[i]+=(A[j]>>i)&1;
-            }
-            res|=(bitnum[i]%3)<<i;
+    bool searchMatrix(vector<vector<int> > &matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+        int i = 0, j = n - 1;
+        while(i < m && j >= 0){
+            if(matrix[i][j] > target)
+                j--;
+            else if(matrix[i][j] < target)
+                i++;
+            else
+                return true;
         }
-        return res;
+    return false;
     }
 };
