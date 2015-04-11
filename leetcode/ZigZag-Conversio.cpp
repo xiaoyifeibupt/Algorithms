@@ -37,7 +37,7 @@ public:
  * 第0行和最后一行中，前一个下标的值和后一个下标的值相差 2 * nRows - 2
  * 中间行中，前一个下标的值和后一个下标的值需要根据这个下标是该行中的奇数列还是偶数列来计算
  * 奇数列2 * (nRows - 1 - i)，偶数列2 * i。
- * /
+ */
 class Solution2 {
 public:
     string convert(string s, int nRows) {
