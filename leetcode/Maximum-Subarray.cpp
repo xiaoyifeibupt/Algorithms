@@ -8,7 +8,7 @@
 *If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 */
 
-class Solution {
+class Solution1 {
 public:
     int maxSubArray(int A[], int n) {
         int sum = A[0],b = 0;
@@ -21,5 +21,33 @@ public:
                 sum = b;
         }
     return sum;
+    }
+};
+
+class Solution2 {
+public:
+    int maxSubArray(int A[], int n) {
+        int answer = A[0];
+        int endhere = A[0];
+        for(int i = 1; i < n; i++) {
+            endhere = max(endhere + A[i],A[i]);
+            answer = max(answer,endhere);
+        }
+    return answer;
+    }
+};
+
+class Solution3 {
+public:
+    int maxSubArray(int A[], int n) {
+        int sum = A[0];
+        int minSum = min(0,sum);
+        int answer = A[0];
+        for(int i = 1; i < n; i++) {
+            sum += A[i];
+            answer = max(answer,sum - minSum);
+            minSum = min(minSum,sum);
+        }
+    return answer;
     }
 };
