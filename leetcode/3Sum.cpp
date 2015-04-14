@@ -20,8 +20,8 @@ public:
             if(i > 0 && num[i] == num[i-1])  
                 continue;  
             int j,k;  
-            j = i+1;  
-            k = num.size()-1;  
+            j = i + 1;  
+            k = num.size() - 1;  
             while(j < k) {  
                 if(j > i + 1 && num[j] == num[j-1]) {   
                     j++;  
