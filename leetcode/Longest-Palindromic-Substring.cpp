@@ -10,11 +10,11 @@ public:
         int longestBegin = 0;
         int maxLen = 1;
         bool table[1000][1000] = {false};
-        //base1
+        
         for (int i = 0; i < n; i++) {
             table[i][i] = true;
         }
-        //base2
+        
         for (int i = 0; i < n - 1; i++) {
             if(s[i] == s[i + 1]) {
                 table[i][i + 1] = true;
@@ -38,7 +38,6 @@ public:
 
 class Solution2 {
 public:
-    //从中间向两边展开
     string expandAroundCenter(string s, int c1, int c2) {
         int l = c1, r = c2;
         int n = s.length();
@@ -52,13 +51,13 @@ public:
     string longestPalindrome(string s) {
         int n = s.length();
         if (n == 0) return "";
-        string longest = s.substr(0, 1);  // a single char itself is a palindrome
+        string longest = s.substr(0, 1);
         for (int i = 0; i < n-1; i++) {
-            string p1 = expandAroundCenter(s, i, i); //长度为奇数的候选回文字符串
+            string p1 = expandAroundCenter(s, i, i); 
             if (p1.length() > longest.length())
                 longest = p1;
  
-            string p2 = expandAroundCenter(s, i, i+1);//长度为偶数的候选回文字符串
+            string p2 = expandAroundCenter(s, i, i+1);
             if (p2.length() > longest.length())
                 longest = p2;
         }

@@ -13,12 +13,12 @@
 
 class Queue {
 public:
-    // Push element x to the back of queue.
+    /* Push element x to the back of queue.*/
     void push(int x) {
         in.push(x);
     }
 
-    // Removes the element from in front of queue.
+    /* Removes the element from in front of queue.*/
     void pop(void) {
         if(out.empty()) {
             while(!in.empty()) {
@@ -32,7 +32,7 @@ public:
         }
     }
 
-    // Get the front element.
+    /* Get the front element.*/
     int peek(void) {
         if(out.empty()) {
             while(!in.empty()) {
@@ -46,7 +46,7 @@ public:
         }
     }
 
-    // Return whether the queue is empty.
+    /* Return whether the queue is empty.*/
     bool empty(void) {
         return in.empty() && out.empty();
     }

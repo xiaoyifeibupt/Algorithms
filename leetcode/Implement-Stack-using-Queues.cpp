@@ -13,7 +13,7 @@
 
 class Stack {
 public:
-    // Push element x onto stack.
+    /* Push element x onto stack.*/
     void push(int x) {
         if(!que1.empty())
             que1.push(x);
@@ -21,7 +21,7 @@ public:
             que2.push(x);
     }
 
-    // Removes the element on top of the stack.
+    /* Removes the element on top of the stack.*/
     void pop() {
         if(!que1.empty()) {
             while(que1.size() > 1) {
@@ -39,7 +39,7 @@ public:
         }
     }
 
-    // Get the top element.
+    /* Get the top element.*/
     int top() {
         int top_;
         if(!que1.empty()) {
@@ -59,7 +59,7 @@ public:
         return top_;
     }
 
-    // Return whether the stack is empty.
+    /* Return whether the stack is empty.*/
     bool empty() {
         return que1.empty() && que2.empty();
     }
