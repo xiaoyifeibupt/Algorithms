@@ -1,7 +1,8 @@
-/*
+/**
 *Given two binary trees, write a function to check if they are equal or not.
 
-*Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+*Two binary trees are considered equal if they are 
+*structurally identical and the nodes have the same value.
 */
 
 /**
@@ -18,11 +19,11 @@ public:
     bool isSameTree(TreeNode *p, TreeNode *q) {
         if(p == NULL && q == NULL) 
             return true;
-        if((p == NULL && q != NULL) || (p != NULL && q == NULL) || p->val != q->val)
+        if((p == NULL && q != NULL) || (p != NULL && q == NULL) || p -> val != q -> val)
             return false;
             
-        bool left = isSameTree(p->left,q->left);  
-        bool right = isSameTree(p->right,q->right);  
+        bool left = isSameTree(p -> left,q -> left);  
+        bool right = isSameTree(p -> right,q -> right);  
           
         return left && right;  
     }

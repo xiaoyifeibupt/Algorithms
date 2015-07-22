@@ -1,3 +1,3 @@
 /**
-*见Find-Minimum-in-Rotated-Sorted-Array.cpp
+*see Find-Minimum-in-Rotated-Sorted-Array.cpp
 */

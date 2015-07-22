@@ -41,7 +41,7 @@ public:
     }
     
     bool isSymmetric(TreeNode *root) {
-        if(root==NULL || (root->left == NULL && root->right == NULL)) return true;
-        return symTree(root->left,root->right);
+        if(root == NULL || (root -> left == NULL && root -> right == NULL)) return true;
+        return symTree(root -> left,root -> right);
     }
 };

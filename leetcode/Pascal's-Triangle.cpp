@@ -1,4 +1,4 @@
-/*
+/**
 *Given numRows, generate the first numRows of Pascal's triangle.
 
 *For example, given numRows = 5,
@@ -26,7 +26,7 @@ public:
 					if(j == 0 || j == i)
 						pa.push_back(1);
 					else
-						pa.push_back(re[i - 1][j - 1] + re[i-1][j]);
+						pa.push_back(re[i - 1][j - 1] + re[i - 1][j]);
 				}
 			}
 			re.push_back(pa);

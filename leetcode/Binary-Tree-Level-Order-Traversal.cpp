@@ -18,7 +18,8 @@
 
 
 *OJ's Binary Tree Serialization:
-*The serialization of a binary tree follows a level order traversal, where '#' signifies a path terminator where no node exists below.
+*The serialization of a binary tree follows a level order traversal, 
+*where '#' signifies a path terminator where no node exists below.
 
 *Here's an example:
    1
@@ -57,13 +58,13 @@ public:
             for (int i = 0; i < count; ++i) {  
                 root = treeque.front();  
                 treeque.pop();  
-                tem.push_back(root->val);  
-                if (root->left != NULL) {
-                    treeque.push(root->left);  
+                tem.push_back(root -> val);  
+                if (root -> left != NULL) {
+                    treeque.push(root -> left);  
                     ++level;  
                 }  
-                if (root->right != NULL) {  
-                    treeque.push(root->right);  
+                if (root -> right != NULL) {  
+                    treeque.push(root -> right);  
                     ++level;  
                 }  
             }  

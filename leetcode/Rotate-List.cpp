@@ -1,4 +1,4 @@
-/*
+/**
 *Given a list, rotate the list to the right by k places, where k is non-negative.
 
 *For example:
@@ -21,19 +21,19 @@ public:
             return NULL;
         ListNode *p = head;
         int length = 1;
-        while(p->next){
-            p = p->next;
+        while(p -> next){
+            p = p -> next;
             length++;
         }
-        p->next = head;
+        p -> next = head;
         
         k = k % length;
         
         for(int i = 0; i < length - k; i++){
-            head = head->next;
-            p = p->next;
+            head = head -> next;
+            p = p -> next;
         }
-        p->next = NULL;
+        p -> next = NULL;
         return head;
     }
 };

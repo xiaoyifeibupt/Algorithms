@@ -1,4 +1,4 @@
-/*
+/**
 *Given a set of distinct integers, nums, return all possible subsets.
 
 *Note:
@@ -32,7 +32,7 @@ public:
                 if(j & 1)
                     temp.push_back(nums[index]);
                 index++;
-                j = j >>1;
+                j = j >> 1;
             }
             sort(temp.begin(),temp.end());
             result.push_back(temp);

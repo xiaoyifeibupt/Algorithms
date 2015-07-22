@@ -1,4 +1,4 @@
-/*
+/**
 *Given a linked list, remove the nth node from the end of list and return its head.
 
 *For example,
@@ -29,21 +29,21 @@ public:
         ListNode *h2 = head;
         ListNode *p = NULL;
         while(n-1){
-            h2 = h2->next;
+            h2 = h2 -> next;
             n--;
         }
         while(h2->next != NULL){
             p = h1;
-            h1 = h1->next;
-            h2 = h2->next;
+            h1 = h1 -> next;
+            h2 = h2 -> next;
         }
         
         if(p == NULL){
-            head = h1->next;
+            head = h1 -> next;
             delete h1;
         }
         else{
-            p->next = h1->next;
+            p -> next = h1 -> next;
             delete h1;
         }
         return head;

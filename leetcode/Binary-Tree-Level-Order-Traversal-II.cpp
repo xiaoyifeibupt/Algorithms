@@ -1,5 +1,6 @@
 /**
-*Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
+*Given a binary tree, return the bottom-up level order traversal of its nodes' values. 
+*(ie, from left to right, level by level from leaf to root).
 
 *For example:
 *Given binary tree {3,9,20,#,#,15,7},
@@ -43,12 +44,12 @@ public:
                 root = treeque.front();  
                 treeque.pop();  
                 tem.push_back(root->val);  
-                if (root->left != NULL) {
-                    treeque.push(root->left);  
+                if (root -> left != NULL) {
+                    treeque.push(root -> left);  
                     ++level;  
                 }  
-                if (root->right != NULL) {  
-                    treeque.push(root->right);  
+                if (root -> right != NULL) {  
+                    treeque.push(root -> right);  
                     ++level;  
                 }  
             }  

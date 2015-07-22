@@ -1,4 +1,4 @@
-/*
+/**
 *Implement pow(x, n).
 */
 

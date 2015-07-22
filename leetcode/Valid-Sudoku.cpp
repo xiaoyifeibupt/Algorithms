@@ -16,9 +16,9 @@ public:
             {  
                 if(board[i][j] == '.')continue;  
                 int num = board[i][j] - '1';  
-                if(rows[i][num] || cols[j][num] || blocks[i - i%3 + j/3][num])  
+                if(rows[i][num] || cols[j][num] || blocks[i - i % 3 + j / 3][num])  
                     return false;  
-                rows[i][num] = cols[j][num] = blocks[i - i%3 + j/3][num] = true;  
+                rows[i][num] = cols[j][num] = blocks[i - i % 3 + j / 3][num] = true;  
             }  
         return true;  
     }

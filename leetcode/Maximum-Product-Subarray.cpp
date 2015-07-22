@@ -15,9 +15,9 @@ public:
         int value = maxA[0];
         
         for(int i = 1 ; i < n ; ++i) {  
-            maxA[i] = max(max(A[i],maxA[i-1]*A[i]),minA[i-1]*A[i]);  
-            minA[i] = min(min(A[i],maxA[i-1]*A[i]),minA[i-1]*A[i]);  
-            value=max(value,maxA[i]);  
+            maxA[i] = max(max(A[i], maxA[i - 1] * A[i]), minA[i - 1] * A[i]);  
+            minA[i] = min(min(A[i], maxA[i - 1] * A[i]), minA[i - 1] * A[i]);  
+            value = max(value,maxA[i]);  
         }
         delete [] maxA;
         delete [] minA;

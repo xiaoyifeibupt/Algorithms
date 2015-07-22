@@ -1,4 +1,4 @@
-/*
+/**
 *Remove all elements from a linked list of integers that have value val.
 
 *Example
@@ -32,13 +32,13 @@ public:
         result = p;
         
         while (p) {  
-            if (p->next && p->next->val == val) {  
-                ListNode *temp = p->next;  
-                p->next = p->next->next;  
+            if (p -> next && p -> next -> val == val) {  
+                ListNode *temp = p -> next;  
+                p -> next = p -> next -> next;  
                 delete temp;  
                 continue;  
             }  
-            p = p->next;  
+            p = p -> next;  
         }
         
         return result;

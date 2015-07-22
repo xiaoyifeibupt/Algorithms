@@ -20,10 +20,10 @@ public:
         ListNode *p = head;
         if(p == NULL)
             return NULL;
-        while(p->next != NULL){
-            ListNode *q = p->next;
+        while(p -> next != NULL){
+            ListNode *q = p -> next;
             if(p -> val == q -> val){
-                p->next = q->next;
+                p -> next = q->next;
                 delete q;
             }
             else

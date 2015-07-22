@@ -1,4 +1,5 @@
-/*Given a sorted array of integers, find the starting and ending position of a given target value.
+/**
+*Given a sorted array of integers, find the starting and ending position of a given target value.
 
 *Your algorithm's runtime complexity must be in the order of O(log n).
 
@@ -17,7 +18,7 @@ public:
         int left = 0;
         int right = n - 1;
         while(left <= right){
-            int mid = (left + right)>>1;
+            int mid = (left + right) >> 1;
             if(A[mid] > tar)
                 right = mid - 1;
             else if(A[mid] < tar)
