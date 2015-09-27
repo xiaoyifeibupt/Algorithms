@@ -1,4 +1,4 @@
-/**
+/*
 ×î´ó×Ó¾ØÕó
 Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/65536 K (Java/Others)
 Problem Description:
