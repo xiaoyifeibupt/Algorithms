@@ -13,64 +13,62 @@ using namespace std;
 
 
 const vector<int>& findSeq_1(const vector<int>& input) {		
-		int n = input.size(), i, j, k, max;		
-		vector<int> liss(n, 1);
-		vector<int> pre;
-		for (int ii = 0; ii < n; ++ii)
-			pre.push_back(ii);
-		for (i = 1, max = 1, k = 0; i < n; ++i) {
-			for (j = 0; j < i; ++j) {
-				if (input[j] < input[i] && liss[j] + 1 > liss[i]) {
-					liss[i] = liss[j] + 1;
-					pre[i] = j;
-					if (max < liss[i]) {
-						max = liss[i];
-						k = i;
-					}
+	int n = input.size(), i, j, k, max;		
+	vector<int> liss(n, 1);
+	vector<int> pre;
+	for (int ii = 0; ii < n; ++ii)
+		pre.push_back(ii);
+	for (i = 1, max = 1, k = 0; i < n; ++i) {
+		for (j = 0; j < i; ++j) {
+			if (input[j] < input[i] && liss[j] + 1 > liss[i]) {
+				liss[i] = liss[j] + 1;
+				pre[i] = j;
+				if (max < liss[i]) {
+					max = liss[i];
+					k = i;
 				}
 			}
 		}
-		vector<int> *result = new vector<int>(max, 0);
-		i = max - 1;
-		while (pre[k] != k) {
-			(*result)[i--] = input[k];
-			k = pre[k];
-		}
-		(*result)[i] = input[k];
-		return *result;
 	}
+	vector<int> *result = new vector<int>(max, 0);
+	i = max - 1;
+	while (pre[k] != k) {
+		(*result)[i--] = input[k];
+		k = pre[k];
+	}
+	(*result)[i] = input[k];
+	return *result;
+}
 
 
 void insert(vector<int>& LIS, int target) {
     int left = 0, right = LIS.size() - 1;
     auto comp = [](int x, int target) { return x <= target; };
 
-    // Find the largest index "left" which satisfies LIS[left] <= target
-    while (left <= right) {
-        int mid = left + (right - left) / 2;
-        if (!comp(LIS[mid], target)) {
-            right = mid - 1;
-        }
-        else {
-            left = mid + 1;
-        }
-    }
+	// Find the largest index "left" which satisfies LIS[left] <= target
+	while (left <= right) {
+		int mid = left + (right - left) / 2;
+		if (!comp(LIS[mid], target)) {
+			right = mid - 1;
+		} else {
+			left = mid + 1;
+		}
+	}
 
     // If not found, append the target.
-    if (left == LIS.size()) {
-        LIS.emplace_back(target);
-    }
-    else {
-        LIS[left] = target;
-    }
+	if (left == LIS.size()) {
+		LIS.emplace_back(target);
+	} else {
+		LIS[left] = target;
+	}
 }
 
 const vector<int>& findSeq_2(vector<int> nums) {
-    vector<int> *LIS = new vector<int>();
+	vector<int> *LIS = new vector<int>();
 
-    for (auto& i : nums) {
-        insert(*LIS, i);
-    }
+	for (auto& i : nums) {
+		insert(*LIS, i);
+	}
 
     return *LIS;
 }
