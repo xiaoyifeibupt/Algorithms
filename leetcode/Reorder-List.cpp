@@ -1,13 +1,12 @@
 /**
+*
 *Given a singly linked list L: L0→L1→…→Ln-1→Ln,
 *reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
-
 *You must do this in-place without altering the nodes' values.
-
 *For example,
 *Given {1,2,3,4}, reorder it to {1,4,2,3}.
+*
 */
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -52,19 +51,19 @@ public:
         slow -> next = head;
         ListNode* fast = slow;
         
-        while(fast -> next != NULL && fast -> next -> next != NULL){  
-            slow = slow -> next;  
-            fast = fast -> next;  
-            fast = fast -> next;  
+        while(fast->next != NULL && fast->next->next != NULL){  
+            slow = slow->next;  
+            fast = fast->next;  
+            fast = fast->next;  
         }  
           
         if(fast->next != NULL){  
-            slow = slow -> next;  
-            fast = fast -> next;  
+            slow = slow->next;  
+            fast = fast->next;  
         }  
           
-        ListNode* tmp = slow -> next;  
-        slow -> next = NULL;  
+        ListNode* tmp = slow->next;  
+        slow->next = NULL;  
         return tmp;  
     }
     

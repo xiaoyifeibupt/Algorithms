@@ -1,12 +1,10 @@
 /**
 *Remove all elements from a linked list of integers that have value val.
-
 *Example
-*Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6
-*Return: 1 --> 2 --> 3 --> 4 --> 5
+*Given: 1 --&gt; 2 --&gt; 6 --&gt; 3 --&gt; 4 --&gt; 5 --&gt; 6,  val = 6
+*Return: 1 --&gt; 2 --&gt; 3 --&gt; 4 --&gt; 5
+*Credits:Special thanks to @mithmatt for adding this problem and creating all test cases.
 */
-
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -32,13 +30,13 @@ public:
         result = p;
         
         while (p) {  
-            if (p -> next && p -> next -> val == val) {  
-                ListNode *temp = p -> next;  
-                p -> next = p -> next -> next;  
+            if (p->next && p->next->val == val) {  
+                ListNode *temp = p->next;  
+                p->next = p->next->next;  
                 delete temp;  
                 continue;  
             }  
-            p = p -> next;  
+            p = p->next;  
         }
         
         return result;

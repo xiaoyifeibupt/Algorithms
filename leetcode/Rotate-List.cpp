@@ -1,11 +1,9 @@
 /**
 *Given a list, rotate the list to the right by k places, where k is non-negative.
-
 *For example:
-*Given 1->2->3->4->5->NULL and k = 2,
-*return 4->5->1->2->3->NULL.
+*Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,
+*return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.
 */
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -21,19 +19,19 @@ public:
             return NULL;
         ListNode *p = head;
         int length = 1;
-        while(p -> next){
-            p = p -> next;
+        while(p->next){
+            p = p->next;
             length++;
         }
-        p -> next = head;
+        p->next = head;
         
         k = k % length;
         
         for(int i = 0; i < length - k; i++){
-            head = head -> next;
-            p = p -> next;
+            head = head->next;
+            p = p->next;
         }
-        p -> next = NULL;
+        p->next = NULL;
         return head;
     }
 };

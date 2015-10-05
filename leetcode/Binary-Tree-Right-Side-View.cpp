@@ -1,17 +1,15 @@
 /**
-*Given a binary tree, imagine yourself standing on the right side of it, 
-*return the values of the nodes you can see ordered from top to bottom.
-
+*Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
 *For example:
 *Given the following binary tree,
-     1            <---
-   /   \
-  2     3         <---
-   \     \
-    5     4       <---
+*   1            &lt;---
+* /   \
+*2     3         &lt;---
+* \     \
+*  5     4       &lt;---
 *You should return [1, 3, 4].
+*Credits:Special thanks to @amrsaqr for adding this problem and creating all test cases.
 */
-
 /**
  * Definition for binary tree
  * struct TreeNode {
@@ -38,13 +36,13 @@ public:
                 root = treeque.front();  
                 treeque.pop();
                 if(i == count - 1)
-                    result.push_back(root -> val);
-                if (root -> left != NULL) {
-                    treeque.push(root -> left);  
+                    result.push_back(root->val);
+                if (root->left != NULL) {
+                    treeque.push(root->left);  
                     ++level;  
                 }  
-                if (root -> right != NULL) {  
-                    treeque.push(root -> right);  
+                if (root->right != NULL) {  
+                    treeque.push(root->right);  
                     ++level;  
                 }  
             }

@@ -1,7 +1,7 @@
 /**
 *Implement pow(x, n).
+*
 */
-
 class Solution {
 public:
     double powhelp(double x, int n) {

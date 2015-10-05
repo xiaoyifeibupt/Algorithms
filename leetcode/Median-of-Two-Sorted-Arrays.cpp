@@ -1,8 +1,6 @@
 /**
-*There are two sorted arrays A and B of size m and n respectively. 
-*Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+*There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
 */
-
 double findKth(int a[], int m, int b[], int n, int k) {
     if (m > n)
         return findKth(b, n, a, m, k);
