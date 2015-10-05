@@ -20,7 +20,7 @@ public:
         int count = 0;
         while (num) {
             count++;
-            num = num&(num - 1);
+            num = num & (num - 1);
         }
         return count;
     }

@@ -10,7 +10,7 @@
 *Challenge*
 *Either of the following solutions are acceptable:*
 *
-*O(1) Space, O(nlogn) Time*
+*O(n) Space, O(nlogn) Time*
 *O(n) Space, O(n) Time*
 *
 */

@@ -28,31 +28,49 @@ public:
       */
     int ladderLength(string start, string end, unordered_set<string> &dict) {
         // write your code here
-        if(start == end) return 0;
-        unordered_map<string,int> len;
-        len[start] = 1;
-        queue<string> ladder;
-        ladder.push(start);
-        while(!ladder.empty()){
-            string word = ladder.front();
-            ladder.pop();
-            int step = len[word] + 1;
-            for(int i = 0; i < word.length(); ++i) {
-                for(int c = 'a'; c <= 'z'; ++c) {
-                    if(word[i] != c) {
-                        char tem = word[i];
-                        word[i] = c;
-                        if(word == end)
-                                return step;
-                        if((dict.find(word) != dict.end()) && (len.find(word) == len.end())){
-                            ladder.push(word);
-                            len.insert(make_pair(word,step));
-                        }
-                        word[i] = tem;
+        queue<string> current, next; // 当前层，下一层
+        unordered_set<string> visited; //判重
+        int level = 0; // 层次
+        bool found = false;
+        auto state_is_target = [&](const string &s) {return s == end;};
+        auto state_extend = [&](const string &s) {
+            vector<string> result;
+            for (size_t i = 0; i < s.size(); ++i) {
+                string new_word(s);
+                for (char c = 'a'; c <= 'z'; c++) {
+                    if (c == new_word[i]) 
+                        continue;
+                    swap(c, new_word[i]);
+                    if ((dict.count(new_word) > 0 || new_word == end) &&
+                        !visited.count(new_word)) {
+                        result.push_back(new_word);
+                        visited.insert(new_word);
+                    }
+                    swap(c, new_word[i]); // 恢复该单词
+                }
+            }
+            return result;
+        };
+        current.push(start);
+        while (!current.empty() && !found) {
+            ++level;
+            while (!current.empty() && !found) {
+                const string str = current.front();
+                current.pop();
+                const auto& new_states = state_extend(str);
+                for (const auto& state : new_states) {
+                    next.push(state);
+                    if (state_is_target(state)) {
+                        found = true; //找到了
+                        break;
                     }
                 }
             }
+            swap(next, current);
         }
-    return 0;
+        if (found) 
+            return level + 1;
+        else 
+            return 0;
     }
 };

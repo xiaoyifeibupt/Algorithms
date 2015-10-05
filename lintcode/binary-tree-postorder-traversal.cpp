@@ -37,28 +37,31 @@ public:
     vector<int> postorderTraversal(TreeNode *root) {
         // write your code here
         vector<int> result;
-        if(root == nullptr) return result;
-        stack<TreeNode*> sta;
-        while (1) {
-            if (root) {
-                sta.push(root);
-                sta.push(root -> right);
-                root = root -> left;
+        /* p，正在访问的结点，q，刚刚访问过的结点*/
+        const TreeNode *p, *q;
+        stack<const TreeNode*> sta;
+        p = root;
+        do {
+            while (p != nullptr) {/* 往左下走*/
+                sta.push(p);
+                p = p -> left;
             }
-            else if (!root) {
-                root = sta.top();
+            q = nullptr;
+            while (!sta.empty()) {
+                p = sta.top();
                 sta.pop();
-                if(!root) {
-                    root = sta.top();
-                    sta.pop();
-                    result.push_back(root -> val);
-                    if(sta.empty()) break;
-                    root = sta.top();
-                    sta.pop();
+                /* 右孩子不存在或已被访问，访问之*/
+                if (p -> right == q) {
+                    result.push_back(p -> val);
+                    q = p;/* 保存刚访问过的结点*/
+                } else {
+                    /* 当前结点不能访问，需第二次进栈*/
+                    sta.push(p);
+                    p = p -> right;/* 先处理右子树*/
+                    break;
                 }
-                sta.push(nullptr);
             }
-        }
+        } while (!sta.empty());
         return result;
     }
 };

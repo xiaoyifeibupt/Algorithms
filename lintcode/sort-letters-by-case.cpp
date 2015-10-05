@@ -1,7 +1,7 @@
 /**
 *Given a string which contains only letters. Sort it by lower case first and upper case second.
 *Example*
-*For &quot;*abAcD*&quot;, a reasonable answer is &quot;*acbAD*&quot;*
+*For "*abAcD*", a reasonable answer is "*acbAD*"*
 
 *Note*
 *It's *not necessary* to keep the original order of lower-case letters and upper case letters.*
