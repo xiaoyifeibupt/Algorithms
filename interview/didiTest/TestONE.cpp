@@ -1,20 +1,20 @@
 /*
-×î´ó×Ó¾ØÕó
+æœ€å¤§å­çŸ©é˜µ
 Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/65536 K (Java/Others)
 Problem Description:
-ÇóÒ»¸ö¾ØÕóÖĞ×î´óµÄ2*2¾ØÕó(ÔªËØºÍ×î´ó)µÄºÍ¡£
-Èç:
+æ±‚ä¸€ä¸ªçŸ©é˜µä¸­æœ€å¤§çš„2*2çŸ©é˜µ(å…ƒç´ å’Œæœ€å¤§)çš„å’Œã€‚
+å¦‚:
 1 2 0 3 4
 2 3 4 5 1
 1 1 5 3 0
-ÖĞ×î´óµÄÊÇ:
+ä¸­æœ€å¤§çš„æ˜¯:
 4 5
 5 3
-ºÍÎª17
-ÊäÈë
-m*nµÄ¾ØÕó
-Êä³ö
-¸Ãm*n¾ØÕóµÄ×î´ó2*2×Ó¾ØÕó(ÔªËØºÍ×î´ó)µÄºÍ
+å’Œä¸º17
+è¾“å…¥
+m*nçš„çŸ©é˜µ
+è¾“å‡º
+è¯¥m*nçŸ©é˜µçš„æœ€å¤§2*2å­çŸ©é˜µ(å…ƒç´ å’Œæœ€å¤§)çš„å’Œ
 */
 
 
@@ -47,7 +47,7 @@ int get_max_Matrix(vector<vector<int> > &a) {
 vector<string> split(string str,string pattern) {  
 	string::size_type pos;  
 	vector<string> result;  
-	str += pattern;//À©Õ¹×Ö·û´®ÒÔ·½±ã²Ù×÷  
+	str += pattern;//æ‰©å±•å­—ç¬¦ä¸²ä»¥æ–¹ä¾¿æ“ä½œ  
 	int size = str.size();  
   
 	for(int i = 0; i < size; i++) {
